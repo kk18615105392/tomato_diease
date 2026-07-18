@@ -55,3 +55,7 @@ events.out.tfevents.*
 *.tar.gz
 .tmp/
 temp/
+
+*.pdf
+*.pptx
+
