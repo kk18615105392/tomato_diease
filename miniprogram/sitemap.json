@@ -1,0 +1,7 @@
+{
+  "desc": "Tomato AI 田间诊断小程序",
+  "rules": [{
+    "action": "allow",
+    "page": "*"
+  }]
+}

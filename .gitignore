@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+frontend/dist/
+frontend/dist-ssr/
+*.local
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Runtime uploads & local DB
+backend/uploads/*
+!backend/uploads/.gitkeep
+backend/data/*.db
+backend/data/*.db-*
+
+# Model weights (过大，请本地保留；仓库仅保留 results.csv / 配置)
+*.pt
+*.pth
+*.onnx
+*.engine
+*.weights
+model/**/weights/
+model/**/*.pt
+model/**/*.pth
+
+# Logs & caches
+*.log
+.cache/
+.pytest_cache/
+.mypy_cache/
+runs/
+wandb/
+events.out.tfevents.*
+*.tfevents.*
+*.pptx
+
+# Build / temp
+*.zip
+*.7z
+*.tar.gz
+.tmp/
+temp/

@@ -1,0 +1,9 @@
+<view class="page">
+  <view class="card item" wx:for="{{diseases}}" wx:key="id" data-id="{{item.id}}" bindtap="openDetail">
+    <view class="row">
+      <text class="name">{{item.name}}</text>
+      <text class="sev sev-{{item.sevClass}}">{{item.severity}}</text>
+    </view>
+    <view class="muted">{{item.category}} · {{item.pathogen}}</view>
+  </view>
+</view>

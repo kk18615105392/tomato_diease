@@ -1,0 +1,23 @@
+{
+  "exp_id": "E7a",
+  "name": "CBAM 串行 k=7",
+  "improvement": "4 层 C2fCBAM + SPPF 后 CBAM，通道→空间",
+  "dataset": "v2",
+  "weight_file": "v2.pt",
+  "exists": true,
+  "recommendation": "不推荐",
+  "metrics": {
+    "test_map50": 0.9664493038383425,
+    "test_map50_95": 0.7994528610707686,
+    "precision": 0.891729360245485,
+    "recall": 0.943885530465763,
+    "fps": 80.3,
+    "params_m": 3.077,
+    "size_mb": 6.139
+  },
+  "inference": {
+    "imgsz": 640,
+    "conf_default": 0.25,
+    "framework": "ultralytics YOLOv8"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "exp_id": "E8a",
+  "name": "P2 四尺度头",
+  "improvement": "P2/P3/P4/P5 四尺度检测",
+  "dataset": "v2",
+  "weight_file": "v2.pt",
+  "exists": true,
+  "recommendation": "v2 收益有限",
+  "metrics": {
+    "test_map50": 0.9717719045662851,
+    "test_map50_95": 0.8037800461802372,
+    "precision": 0.8706244873568842,
+    "recall": 0.9462911996932555,
+    "fps": 92.6,
+    "params_m": 2.928,
+    "size_mb": 6.0
+  },
+  "inference": {
+    "imgsz": 640,
+    "conf_default": 0.25,
+    "framework": "ultralytics YOLOv8"
+  }
+}

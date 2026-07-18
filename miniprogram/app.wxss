@@ -1,0 +1,39 @@
+page {
+  background: #f3f7f2;
+  color: #1f2937;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 28rpx;
+  margin: 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(20, 83, 45, 0.06);
+}
+
+.btn-primary {
+  background: #166534;
+  color: #fff;
+  border-radius: 999rpx;
+  font-weight: 600;
+}
+
+.btn-primary::after {
+  border: none;
+}
+
+.muted {
+  color: #6b7280;
+  font-size: 24rpx;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4rpx 14rpx;
+  border-radius: 999rpx;
+  background: #ecfdf5;
+  color: #166534;
+  font-size: 22rpx;
+}

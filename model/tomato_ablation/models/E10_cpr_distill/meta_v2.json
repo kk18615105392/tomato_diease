@@ -1,0 +1,23 @@
+{
+  "exp_id": "E10",
+  "name": "CPR 知识蒸馏",
+  "improvement": "冲突感知伪标签提纯 + MLCA-s 教师",
+  "dataset": "v2",
+  "weight_file": "v2.pt",
+  "exists": true,
+  "recommendation": "≈E6",
+  "metrics": {
+    "test_map50": 0.9739301729889667,
+    "test_map50_95": 0.824575717371441,
+    "precision": 0.8816317719441166,
+    "recall": 0.9229318953589442,
+    "fps": 99.0,
+    "params_m": 3.013,
+    "size_mb": 5.967
+  },
+  "inference": {
+    "imgsz": 640,
+    "conf_default": 0.25,
+    "framework": "ultralytics YOLOv8"
+  }
+}

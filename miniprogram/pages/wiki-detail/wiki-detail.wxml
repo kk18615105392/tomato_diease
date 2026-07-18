@@ -1,0 +1,17 @@
+<view class="card" wx:if="{{disease}}">
+  <view class="title">{{disease.name}}</view>
+  <view class="muted">{{disease.category}} · {{disease.pathogen}}</view>
+  <view class="tag">危害程度：{{disease.severity}}</view>
+
+  <view class="block-title">症状</view>
+  <view class="line" wx:for="{{disease.symptoms}}" wx:key="*this">· {{item}}</view>
+
+  <view class="block-title">发病条件</view>
+  <view class="line">{{disease.conditions}}</view>
+
+  <view class="block-title">防治要点</view>
+  <view class="line" wx:for="{{disease.prevention}}" wx:key="*this">· {{item}}</view>
+
+  <view class="block-title">推荐药剂</view>
+  <view class="line" wx:for="{{disease.pesticides}}" wx:key="*this">· {{item}}</view>
+</view>

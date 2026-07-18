@@ -1,0 +1,17 @@
+<view class="page">
+  <view wx:if="{{!token}}" class="card center">
+    <view class="muted">登录后可查看与 Web 同步的诊断报告</view>
+    <button class="btn-primary" bindtap="goLogin">去登录</button>
+  </view>
+
+  <block wx:else>
+    <view class="card item" wx:for="{{reports}}" wx:key="id" data-id="{{item.id}}" bindtap="openReport">
+      <view class="row">
+        <text class="summary">{{item.summary}}</text>
+        <text class="src">{{item.source === 'miniprogram' ? '小程序' : 'Web'}}</text>
+      </view>
+      <view class="muted">{{item.created_at}}</view>
+    </view>
+    <view class="muted center" wx:if="{{!reports.length}}">暂无报告，去拍叶诊断一条吧</view>
+  </block>
+</view>

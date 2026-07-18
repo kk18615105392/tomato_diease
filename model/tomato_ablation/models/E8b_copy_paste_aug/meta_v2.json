@@ -1,0 +1,23 @@
+{
+  "exp_id": "E8b",
+  "name": "Copy-Paste 增强",
+  "improvement": "baseline + Copy-Paste/scale/mixup",
+  "dataset": "v2",
+  "weight_file": "v2.pt",
+  "exists": true,
+  "recommendation": "v2 首选",
+  "metrics": {
+    "test_map50": 0.975654270002809,
+    "test_map50_95": 0.8097980840817374,
+    "precision": 0.9244246998871862,
+    "recall": 0.926280854497253,
+    "fps": 104.6,
+    "params_m": 3.013,
+    "size_mb": 5.967
+  },
+  "inference": {
+    "imgsz": 640,
+    "conf_default": 0.25,
+    "framework": "ultralytics YOLOv8"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "exp_id": "E6",
+  "name": "蒸馏 baseline←MLCA-s",
+  "improvement": "baseline 学生 + E3 大教师伪标签",
+  "dataset": "merged9",
+  "weight_file": "merged9.pt",
+  "exists": true,
+  "recommendation": "merged9 蒸馏优选",
+  "metrics": {
+    "test_map50": 0.9050956426485306,
+    "test_map50_95": 0.7948227137096603,
+    "precision": 0.9151244623663407,
+    "recall": 0.8173453389857847,
+    "fps": 100.3,
+    "params_m": 3.013,
+    "size_mb": 5.974
+  },
+  "inference": {
+    "imgsz": 640,
+    "conf_default": 0.25,
+    "framework": "ultralytics YOLOv8"
+  }
+}

@@ -1,0 +1,24 @@
+<view class="card" wx:if="{{result}}">
+  <view class="title">{{summary}}</view>
+  <view class="muted" wx:if="{{reportId}}">云端报告 ID：{{reportId}}</view>
+  <view class="muted" wx:if="{{result.model_label}}">模型：{{result.model_label}}</view>
+  <view class="muted" wx:if="{{result.infer_ms}}">耗时：{{result.infer_ms}} ms</view>
+
+  <view class="list" wx:if="{{result.mode==='detection'}}">
+    <view class="item" wx:for="{{result.detections}}" wx:key="index">
+      <view class="row">
+        <text class="tag">{{item.label}}</text>
+        <text class="conf">{{item.confidencePct}}%</text>
+      </view>
+    </view>
+    <view class="muted" wx:if="{{!result.detections.length}}">未检测到目标，可换一张清晰叶片图重试</view>
+  </view>
+
+  <view wx:elif="{{result.mode==='classification'}}">
+    <view class="big">{{result.disease_name}}</view>
+    <view class="muted">置信度 {{result.confidencePct}}%</view>
+  </view>
+
+  <button class="btn-primary" bindtap="goHistory">查看我的报告</button>
+  <button class="btn-ghost" bindtap="goWiki">去病害百科</button>
+</view>

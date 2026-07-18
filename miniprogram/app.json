@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/diagnose/diagnose",
+    "pages/result/result",
+    "pages/history/history",
+    "pages/wiki/wiki",
+    "pages/wiki-detail/wiki-detail",
+    "pages/login/login",
+    "pages/report/report"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#14532d",
+    "navigationBarTitleText": "Tomato AI",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f3f7f2",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#6b7280",
+    "selectedColor": "#14532d",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/tab-home.png",
+        "selectedIconPath": "assets/tab-home-active.png"
+      },
+      {
+        "pagePath": "pages/diagnose/diagnose",
+        "text": "拍叶诊断",
+        "iconPath": "assets/tab-camera.png",
+        "selectedIconPath": "assets/tab-camera-active.png"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "我的报告",
+        "iconPath": "assets/tab-list.png",
+        "selectedIconPath": "assets/tab-list-active.png"
+      },
+      {
+        "pagePath": "pages/wiki/wiki",
+        "text": "病害百科",
+        "iconPath": "assets/tab-book.png",
+        "selectedIconPath": "assets/tab-book-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

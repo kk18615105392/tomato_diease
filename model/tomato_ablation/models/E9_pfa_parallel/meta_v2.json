@@ -1,0 +1,23 @@
+{
+  "exp_id": "E9",
+  "name": "PFA 并行注意力",
+  "improvement": "SPPF 后并行通道/空间融合 + DWConv",
+  "dataset": "v2",
+  "weight_file": "v2.pt",
+  "exists": true,
+  "recommendation": "优于 CBAM",
+  "metrics": {
+    "test_map50": 0.9740131667619825,
+    "test_map50_95": 0.809660342224775,
+    "precision": 0.9187598161681028,
+    "recall": 0.9549614449004871,
+    "fps": 91.3,
+    "params_m": 3.09,
+    "size_mb": 6.124
+  },
+  "inference": {
+    "imgsz": 640,
+    "conf_default": 0.25,
+    "framework": "ultralytics YOLOv8"
+  }
+}

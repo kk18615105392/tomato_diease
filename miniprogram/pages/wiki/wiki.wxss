@@ -1,0 +1,7 @@
+.item { margin-bottom: 0; }
+.row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8rpx; }
+.name { font-size: 30rpx; font-weight: 700; color: #14532d; }
+.sev { font-size: 22rpx; padding: 4rpx 12rpx; border-radius: 999rpx; }
+.sev-high { background: #fee2e2; color: #991b1b; }
+.sev-mid { background: #fef3c7; color: #92400e; }
+.sev-low { background: #ecfdf5; color: #166534; }

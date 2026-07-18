@@ -1,0 +1,314 @@
+{
+  "generated_at": "2026-07-02T14:57:57.394390+00:00",
+  "source_project": "MLCA-master",
+  "export_root": "C:\\Users\\cuizekun\\Desktop\\small_detect_5_19\\MLCA-master\\export\\tomato_ablation_weights",
+  "datasets": {
+    "v2": {
+      "yaml": "data/tomato_v2.yaml",
+      "classes": 10,
+      "task": "整叶 10 类"
+    },
+    "merged9": {
+      "yaml": "data/tomato_merged9.yaml",
+      "classes": 9,
+      "task": "小病斑 9 类"
+    }
+  },
+  "recommended": {
+    "v2_deploy": "models/E8b_copy_paste_aug/v2.pt",
+    "v2_distill": "models/E6_distill_baseline_from_mlca_s/v2.pt",
+    "v2_attention": "models/E9_pfa_parallel/v2.pt",
+    "merged9_deploy": "models/E1_baseline/merged9.pt",
+    "merged9_distill": "models/E6_distill_baseline_from_mlca_s/merged9.pt"
+  },
+  "experiments": [
+    {
+      "exp_id": "E1",
+      "folder": "E1_baseline",
+      "name": "标准 YOLOv8n 基准",
+      "improvement": "无任何模块，对照组",
+      "v2": {
+        "exists": true,
+        "test_map50": 0.9711081566793718,
+        "path": "models/E1_baseline/v2.pt"
+      },
+      "merged9": {
+        "exists": true,
+        "test_map50": 0.9089369983167186,
+        "path": "models/E1_baseline/merged9.pt"
+      },
+      "recommend_v2": "基准",
+      "recommend_m9": "merged9 首选"
+    },
+    {
+      "exp_id": "E2",
+      "folder": "E2_mlca",
+      "name": "MLCA 注意力",
+      "improvement": "Backbone 4 层 C2fMLCA + SPPF 后 MLCA",
+      "v2": {
+        "exists": true,
+        "test_map50": 0.9707982769231442,
+        "path": "models/E2_mlca/v2.pt"
+      },
+      "merged9": {
+        "exists": true,
+        "test_map50": 0.8972798996330709,
+        "path": "models/E2_mlca/merged9.pt"
+      },
+      "recommend_v2": "仅作教师",
+      "recommend_m9": "仅作教师"
+    },
+    {
+      "exp_id": "E3",
+      "folder": "E3_mlca_s_teacher",
+      "name": "YOLOv8s+MLCA 教师",
+      "improvement": "YOLOv8s 大 backbone + MLCA，供蒸馏",
+      "v2": {
+        "exists": true,
+        "test_map50": 0.9750088241683628,
+        "path": "models/E3_mlca_s_teacher/v2.pt"
+      },
+      "merged9": {
+        "exists": true,
+        "test_map50": 0.8954233222666494,
+        "path": "models/E3_mlca_s_teacher/merged9.pt"
+      },
+      "recommend_v2": "蒸馏教师",
+      "recommend_m9": "蒸馏教师"
+    },
+    {
+      "exp_id": "E4",
+      "folder": "E4_distill_baseline_from_mlca_n",
+      "name": "蒸馏 baseline←MLCA-n",
+      "improvement": "baseline 学生 + E2 教师伪标签（conf≥0.7）",
+      "v2": {
+        "exists": true,
+        "test_map50": 0.9715255827965453,
+        "path": "models/E4_distill_baseline_from_mlca_n/v2.pt"
+      },
+      "merged9": {
+        "exists": true,
+        "test_map50": 0.8987787274274682,
+        "path": "models/E4_distill_baseline_from_mlca_n/merged9.pt"
+      },
+      "recommend_v2": "轻量蒸馏",
+      "recommend_m9": "轻量蒸馏"
+    },
+    {
+      "exp_id": "E5",
+      "folder": "E5_distill_mlca_from_mlca_n",
+      "name": "蒸馏 MLCA←MLCA-n",
+      "improvement": "MLCA 学生 + E2 教师伪标签",
+      "v2": {
+        "exists": true,
+        "test_map50": 0.9711343165660253,
+        "path": "models/E5_distill_mlca_from_mlca_n/v2.pt"
+      },
+      "merged9": {
+        "exists": true,
+        "test_map50": 0.9050073131714209,
+        "path": "models/E5_distill_mlca_from_mlca_n/merged9.pt"
+      },
+      "recommend_v2": "—",
+      "recommend_m9": "merged9 MLCA 优选"
+    },
+    {
+      "exp_id": "E6",
+      "folder": "E6_distill_baseline_from_mlca_s",
+      "name": "蒸馏 baseline←MLCA-s",
+      "improvement": "baseline 学生 + E3 大教师伪标签",
+      "v2": {
+        "exists": true,
+        "test_map50": 0.9754086928088384,
+        "path": "models/E6_distill_baseline_from_mlca_s/v2.pt"
+      },
+      "merged9": {
+        "exists": true,
+        "test_map50": 0.9050956426485306,
+        "path": "models/E6_distill_baseline_from_mlca_s/merged9.pt"
+      },
+      "recommend_v2": "v2 最佳蒸馏",
+      "recommend_m9": "merged9 蒸馏优选"
+    },
+    {
+      "exp_id": "E7a",
+      "folder": "E7a_cbam_serial",
+      "name": "CBAM 串行 k=7",
+      "improvement": "4 层 C2fCBAM + SPPF 后 CBAM，通道→空间",
+      "v2": {
+        "exists": true,
+        "test_map50": 0.9664493038383425,
+        "path": "models/E7a_cbam_serial/v2.pt"
+      },
+      "merged9": {
+        "exists": true,
+        "test_map50": 0.8913070347101786,
+        "path": "models/E7a_cbam_serial/merged9.pt"
+      },
+      "recommend_v2": "不推荐",
+      "recommend_m9": "不推荐"
+    },
+    {
+      "exp_id": "E7b",
+      "folder": "E7b_cbam_lite",
+      "name": "CBAM-Lite",
+      "improvement": "仅 2 处 CBAM，轻量化",
+      "v2": {
+        "exists": true,
+        "test_map50": 0.9719174551839951,
+        "path": "models/E7b_cbam_lite/v2.pt"
+      },
+      "merged9": {
+        "exists": true,
+        "test_map50": 0.8903885164625684,
+        "path": "models/E7b_cbam_lite/merged9.pt"
+      },
+      "recommend_v2": "CBAM 中最优",
+      "recommend_m9": "—"
+    },
+    {
+      "exp_id": "E7c",
+      "folder": "E7c_cbam_sa_first",
+      "name": "CBAM SA-first",
+      "improvement": "空间优先 + ECA + 残差门控",
+      "v2": {
+        "exists": true,
+        "test_map50": 0.967135906055766,
+        "path": "models/E7c_cbam_sa_first/v2.pt"
+      },
+      "merged9": {
+        "exists": false,
+        "test_map50": null,
+        "path": null
+      },
+      "recommend_v2": "不推荐",
+      "recommend_m9": "未训练"
+    },
+    {
+      "exp_id": "E7d",
+      "folder": "E7d_cbam_t",
+      "name": "CBAM-T k=3",
+      "improvement": "小空间核 k=3 + ECA + 残差",
+      "v2": {
+        "exists": true,
+        "test_map50": 0.9707521624683612,
+        "path": "models/E7d_cbam_t/v2.pt"
+      },
+      "merged9": {
+        "exists": true,
+        "test_map50": 0.8979242620623514,
+        "path": "models/E7d_cbam_t/merged9.pt"
+      },
+      "recommend_v2": "速度精度平衡",
+      "recommend_m9": "CBAM 中较好"
+    },
+    {
+      "exp_id": "E8a",
+      "folder": "E8a_p2_head",
+      "name": "P2 四尺度头",
+      "improvement": "P2/P3/P4/P5 四尺度检测",
+      "v2": {
+        "exists": true,
+        "test_map50": 0.9717719045662851,
+        "path": "models/E8a_p2_head/v2.pt"
+      },
+      "merged9": {
+        "exists": false,
+        "test_map50": null,
+        "path": null
+      },
+      "recommend_v2": "v2 收益有限",
+      "recommend_m9": "未训练"
+    },
+    {
+      "exp_id": "E8b",
+      "folder": "E8b_copy_paste_aug",
+      "name": "Copy-Paste 增强",
+      "improvement": "baseline + Copy-Paste/scale/mixup",
+      "v2": {
+        "exists": true,
+        "test_map50": 0.975654270002809,
+        "path": "models/E8b_copy_paste_aug/v2.pt"
+      },
+      "merged9": {
+        "exists": false,
+        "test_map50": null,
+        "path": null
+      },
+      "recommend_v2": "v2 首选",
+      "recommend_m9": "未训练"
+    },
+    {
+      "exp_id": "E8c",
+      "folder": "E8c_p2_and_aug",
+      "name": "P2 + 增强",
+      "improvement": "E8a 结构 + E8b 增强",
+      "v2": {
+        "exists": true,
+        "test_map50": 0.9755141812397461,
+        "path": "models/E8c_p2_and_aug/v2.pt"
+      },
+      "merged9": {
+        "exists": true,
+        "test_map50": 0.8960582222954828,
+        "path": "models/E8c_p2_and_aug/merged9.pt"
+      },
+      "recommend_v2": "高 P 少误检",
+      "recommend_m9": "—"
+    },
+    {
+      "exp_id": "E9",
+      "folder": "E9_pfa_parallel",
+      "name": "PFA 并行注意力",
+      "improvement": "SPPF 后并行通道/空间融合 + DWConv",
+      "v2": {
+        "exists": true,
+        "test_map50": 0.9740131667619825,
+        "path": "models/E9_pfa_parallel/v2.pt"
+      },
+      "merged9": {
+        "exists": false,
+        "test_map50": null,
+        "path": null
+      },
+      "recommend_v2": "优于 CBAM",
+      "recommend_m9": "未训练"
+    },
+    {
+      "exp_id": "E10",
+      "folder": "E10_cpr_distill",
+      "name": "CPR 知识蒸馏",
+      "improvement": "冲突感知伪标签提纯 + MLCA-s 教师",
+      "v2": {
+        "exists": true,
+        "test_map50": 0.9739301729889667,
+        "path": "models/E10_cpr_distill/v2.pt"
+      },
+      "merged9": {
+        "exists": false,
+        "test_map50": null,
+        "path": null
+      },
+      "recommend_v2": "≈E6",
+      "recommend_m9": "未训练"
+    },
+    {
+      "exp_id": "E11",
+      "folder": "E11_cakd_dual_teacher",
+      "name": "CAKD 双教师蒸馏",
+      "improvement": "双教师融合 + CPR 提纯",
+      "v2": {
+        "exists": true,
+        "test_map50": 0.9719760409239058,
+        "path": "models/E11_cakd_dual_teacher/v2.pt"
+      },
+      "merged9": {
+        "exists": false,
+        "test_map50": null,
+        "path": null
+      },
+      "recommend_v2": "未超 E6",
+      "recommend_m9": "未训练"
+    }
+  ]
+}

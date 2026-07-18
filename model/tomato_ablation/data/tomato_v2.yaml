@@ -1,0 +1,13 @@
+# 番茄 v2 整叶 10 类（PlantVillage / tomato-29lap v2）
+nc: 10
+names:
+  - Bacterial Spot
+  - Early Blight
+  - Late Blight
+  - Leaf Mold
+  - Septoria
+  - Spider Mites
+  - Target Spot
+  - Yellow Leaf Curl Virus
+  - Healthy
+  - Mosaic Virus

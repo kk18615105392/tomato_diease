@@ -1,0 +1,23 @@
+{
+  "exp_id": "E3",
+  "name": "YOLOv8s+MLCA 教师",
+  "improvement": "YOLOv8s 大 backbone + MLCA，供蒸馏",
+  "dataset": "v2",
+  "weight_file": "v2.pt",
+  "exists": true,
+  "recommendation": "蒸馏教师",
+  "metrics": {
+    "test_map50": 0.9750088241683628,
+    "test_map50_95": 0.8312919645483661,
+    "precision": 0.9391789055021393,
+    "recall": 0.9157663534269911,
+    "fps": 85.7,
+    "params_m": 11.14,
+    "size_mb": 21.5
+  },
+  "inference": {
+    "imgsz": 640,
+    "conf_default": 0.25,
+    "framework": "ultralytics YOLOv8"
+  }
+}

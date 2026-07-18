@@ -1,0 +1,18 @@
+# Clean + merged 9 classes (best data pipeline for tomato.v1)
+# Generate: python tools/merge_tomato_v1_classes.py --src data/tomato.v1i.yolov11_clean --dst data/tomato.v1i.yolov11_clean_merged9
+
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 9
+names:
+  - Early Blight
+  - Healthy
+  - Late Blight
+  - Leaf Miner
+  - Leaf Mold
+  - Mosaic Virus
+  - Septoria
+  - Spider Mites
+  - Yellow Leaf Curl Virus

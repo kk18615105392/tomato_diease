@@ -1,0 +1,23 @@
+{
+  "exp_id": "E7b",
+  "name": "CBAM-Lite",
+  "improvement": "仅 2 处 CBAM，轻量化",
+  "dataset": "v2",
+  "weight_file": "v2.pt",
+  "exists": true,
+  "recommendation": "CBAM 中最优",
+  "metrics": {
+    "test_map50": 0.9719174551839951,
+    "test_map50_95": 0.8276238344812293,
+    "precision": 0.8803677560901999,
+    "recall": 0.9469115122221347,
+    "fps": 87.8,
+    "params_m": 3.031,
+    "size_mb": 6.036
+  },
+  "inference": {
+    "imgsz": 640,
+    "conf_default": 0.25,
+    "framework": "ultralytics YOLOv8"
+  }
+}

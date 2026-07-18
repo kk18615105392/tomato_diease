@@ -1,0 +1,23 @@
+{
+  "exp_id": "E7c",
+  "name": "CBAM SA-first",
+  "improvement": "空间优先 + ECA + 残差门控",
+  "dataset": "v2",
+  "weight_file": "v2.pt",
+  "exists": true,
+  "recommendation": "不推荐",
+  "metrics": {
+    "test_map50": 0.967135906055766,
+    "test_map50_95": 0.8152999985560981,
+    "precision": 0.8544404656875745,
+    "recall": 0.933699426273586,
+    "fps": 76.2,
+    "params_m": 3.076,
+    "size_mb": 6.143
+  },
+  "inference": {
+    "imgsz": 640,
+    "conf_default": 0.25,
+    "framework": "ultralytics YOLOv8"
+  }
+}

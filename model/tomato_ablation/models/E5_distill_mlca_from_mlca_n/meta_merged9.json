@@ -1,0 +1,23 @@
+{
+  "exp_id": "E5",
+  "name": "蒸馏 MLCA←MLCA-n",
+  "improvement": "MLCA 学生 + E2 教师伪标签",
+  "dataset": "merged9",
+  "weight_file": "merged9.pt",
+  "exists": true,
+  "recommendation": "merged9 MLCA 优选",
+  "metrics": {
+    "test_map50": 0.9050073131714209,
+    "test_map50_95": 0.7882778222126213,
+    "precision": 0.883359160020587,
+    "recall": 0.8319135044861644,
+    "fps": 82.2,
+    "params_m": 3.054,
+    "size_mb": 6.078
+  },
+  "inference": {
+    "imgsz": 640,
+    "conf_default": 0.25,
+    "framework": "ultralytics YOLOv8"
+  }
+}

@@ -1,0 +1,8 @@
+# Auto-generated for czk_biye · E11 · v2
+weights: C:\Users\cuizekun\czk_biye\model\ablation-E11-v2\weights\best.pt
+cfg: ultralytics-yolov8
+imgsz: 640
+epochs: 80
+engine: ultralytics
+dataset: v2
+exp_id: E11

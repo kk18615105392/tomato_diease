@@ -1,0 +1,23 @@
+{
+  "exp_id": "E1",
+  "name": "标准 YOLOv8n 基准",
+  "improvement": "无任何模块，对照组",
+  "dataset": "merged9",
+  "weight_file": "merged9.pt",
+  "exists": true,
+  "recommendation": "merged9 首选",
+  "metrics": {
+    "test_map50": 0.9089369983167186,
+    "test_map50_95": 0.7916537570825976,
+    "precision": 0.8966286627064279,
+    "recall": 0.8348154014971257,
+    "fps": 99.9,
+    "params_m": 3.013,
+    "size_mb": 11.786
+  },
+  "inference": {
+    "imgsz": 640,
+    "conf_default": 0.25,
+    "framework": "ultralytics YOLOv8"
+  }
+}

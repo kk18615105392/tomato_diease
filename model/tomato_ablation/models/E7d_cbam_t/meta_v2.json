@@ -1,0 +1,23 @@
+{
+  "exp_id": "E7d",
+  "name": "CBAM-T k=3",
+  "improvement": "小空间核 k=3 + ECA + 残差",
+  "dataset": "v2",
+  "weight_file": "v2.pt",
+  "exists": true,
+  "recommendation": "速度精度平衡",
+  "metrics": {
+    "test_map50": 0.9707521624683612,
+    "test_map50_95": 0.8195624788245448,
+    "precision": 0.9133073201327695,
+    "recall": 0.9474770385433982,
+    "fps": 98.1,
+    "params_m": 3.021,
+    "size_mb": 6.016
+  },
+  "inference": {
+    "imgsz": 640,
+    "conf_default": 0.25,
+    "framework": "ultralytics YOLOv8"
+  }
+}

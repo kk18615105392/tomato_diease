@@ -1,0 +1,49 @@
+<view class="page">
+  <view class="hero">
+    <view class="hero-title">Tomato AI</view>
+    <view class="hero-sub">田间拍叶 · 与 Web 系统同账号同步</view>
+    <view class="user-row" wx:if="{{user}}">
+      <text class="tag">已登录 · {{user.display_name || user.username}}</text>
+    </view>
+    <view class="user-row" wx:else>
+      <button class="btn-primary login-btn" size="mini" bindtap="goLogin">登录 / 注册</button>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">快捷入口</view>
+    <view class="grid">
+      <view class="grid-item" bindtap="goDiagnose">
+        <text class="grid-emoji">📷</text>
+        <text>拍叶诊断</text>
+      </view>
+      <view class="grid-item" bindtap="goHistory">
+        <text class="grid-emoji">📋</text>
+        <text>我的报告</text>
+      </view>
+      <view class="grid-item" bindtap="goWiki">
+        <text class="grid-emoji">📖</text>
+        <text>病害百科</text>
+      </view>
+      <view class="grid-item" bindtap="scanReport">
+        <text class="grid-emoji">🔎</text>
+        <text>扫码看报告</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="card" wx:if="{{alerts.length}}">
+    <view class="section-title">当季预警</view>
+    <view class="alert" wx:for="{{alerts}}" wx:key="message">
+      <text class="alert-level {{item.level}}">{{item.level === 'danger' ? '高风险' : '注意'}}</text>
+      <text class="alert-text">{{item.disease}}：{{item.message}}</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">与 Web 系统如何关联</view>
+    <view class="muted line">1. 使用同一账号登录 Web 与小程序</view>
+    <view class="muted line">2. 诊断结果自动写入云端报告库</view>
+    <view class="muted line">3. Web「扫码分享」可跳转到小程序报告页</view>
+  </view>
+</view>

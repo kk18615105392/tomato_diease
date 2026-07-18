@@ -1,0 +1,17 @@
+<view class="page">
+  <view class="card">
+    <view class="title">田间拍叶速诊</view>
+    <view class="muted">调用与 Web 端相同的 YOLO 检测模型，结果写入同账号报告库</view>
+
+    <image wx:if="{{preview}}" class="preview" src="{{preview}}" mode="aspectFill" />
+    <view wx:else class="preview empty">拍摄或选择番茄叶片照片</view>
+
+    <view class="actions">
+      <button class="btn-primary half" bindtap="takePhoto">拍照</button>
+      <button class="btn-ghost half" bindtap="chooseAlbum">相册</button>
+    </view>
+    <button class="btn-primary full" loading="{{loading}}" disabled="{{!preview || loading}}" bindtap="runDiagnose">
+      {{loading ? '诊断中…' : '开始检测诊断'}}
+    </button>
+  </view>
+</view>

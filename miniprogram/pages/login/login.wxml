@@ -1,0 +1,24 @@
+<view class="card form">
+  <view class="tabs">
+    <view class="tab {{mode==='login'?'on':''}}" data-mode="login" bindtap="switchMode">登录</view>
+    <view class="tab {{mode==='register'?'on':''}}" data-mode="register" bindtap="switchMode">注册</view>
+  </view>
+
+  <view class="field">
+    <text class="label">用户名</text>
+    <input value="{{username}}" bindinput="onUser" placeholder="与 Web 系统同一账号" />
+  </view>
+  <view class="field" wx:if="{{mode==='register'}}">
+    <text class="label">显示名（可选）</text>
+    <input value="{{displayName}}" bindinput="onDisplay" placeholder="如：张农技员" />
+  </view>
+  <view class="field">
+    <text class="label">密码</text>
+    <input password value="{{password}}" bindinput="onPass" placeholder="至少 6 位" />
+  </view>
+
+  <button class="btn-primary submit" loading="{{loading}}" bindtap="submit">
+    {{mode==='login'?'登录':'注册并登录'}}
+  </button>
+  <view class="muted tip">登录后诊断报告将与电脑端 Web 系统同步</view>
+</view>

@@ -1,0 +1,26 @@
+<view class="card" wx:if="{{report}}">
+  <view class="title">{{report.summary}}</view>
+  <view class="muted">来源：{{report.source === 'miniprogram' ? '小程序' : 'Web 系统'}}</view>
+  <view class="muted">时间：{{report.created_at}}</view>
+  <view class="muted">模式：{{report.mode}}</view>
+
+  <block wx:if="{{report.result.mode==='detection'}}">
+    <view class="block-title">检测目标</view>
+    <view class="item" wx:for="{{detections}}" wx:key="index">
+      <text class="tag">{{item.label}}</text>
+      <text class="conf">{{item.confidencePct}}%</text>
+    </view>
+    <view class="muted" wx:if="{{!detections.length}}">无检测目标</view>
+  </block>
+
+  <block wx:elif="{{report.result.mode==='classification'}}">
+    <view class="big">{{report.result.disease_name}}</view>
+    <view class="muted">置信度 {{confidencePct}}%</view>
+  </block>
+
+  <view class="muted tip">此报告与 Tomato AI Web 系统共用同一云端库</view>
+</view>
+
+<view class="card center" wx:elif="{{error}}">
+  <view>{{error}}</view>
+</view>

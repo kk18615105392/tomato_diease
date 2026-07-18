@@ -1,0 +1,23 @@
+{
+  "exp_id": "E8a",
+  "name": "P2 四尺度头",
+  "improvement": "P2/P3/P4/P5 四尺度检测",
+  "dataset": "merged9",
+  "weight_file": null,
+  "exists": false,
+  "recommendation": "未训练",
+  "metrics": {
+    "test_map50": null,
+    "test_map50_95": null,
+    "precision": null,
+    "recall": null,
+    "fps": null,
+    "params_m": null,
+    "size_mb": null
+  },
+  "inference": {
+    "imgsz": 640,
+    "conf_default": 0.25,
+    "framework": "ultralytics YOLOv8"
+  }
+}

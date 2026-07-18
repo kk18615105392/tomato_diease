@@ -1,0 +1,23 @@
+{
+  "exp_id": "E11",
+  "name": "CAKD 双教师蒸馏",
+  "improvement": "双教师融合 + CPR 提纯",
+  "dataset": "v2",
+  "weight_file": "v2.pt",
+  "exists": true,
+  "recommendation": "未超 E6",
+  "metrics": {
+    "test_map50": 0.9719760409239058,
+    "test_map50_95": 0.8229244651301838,
+    "precision": 0.9106221519091452,
+    "recall": 0.9392729871062553,
+    "fps": 96.0,
+    "params_m": 3.013,
+    "size_mb": 5.967
+  },
+  "inference": {
+    "imgsz": 640,
+    "conf_default": 0.25,
+    "framework": "ultralytics YOLOv8"
+  }
+}

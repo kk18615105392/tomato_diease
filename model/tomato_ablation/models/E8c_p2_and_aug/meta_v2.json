@@ -1,0 +1,23 @@
+{
+  "exp_id": "E8c",
+  "name": "P2 + 增强",
+  "improvement": "E8a 结构 + E8b 增强",
+  "dataset": "v2",
+  "weight_file": "v2.pt",
+  "exists": true,
+  "recommendation": "高 P 少误检",
+  "metrics": {
+    "test_map50": 0.9755141812397461,
+    "test_map50_95": 0.808615570648249,
+    "precision": 0.9508574678892912,
+    "recall": 0.9083471845091481,
+    "fps": 92.9,
+    "params_m": 2.928,
+    "size_mb": 5.998
+  },
+  "inference": {
+    "imgsz": 640,
+    "conf_default": 0.25,
+    "framework": "ultralytics YOLOv8"
+  }
+}

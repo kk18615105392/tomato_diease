@@ -1,0 +1,23 @@
+{
+  "exp_id": "E4",
+  "name": "蒸馏 baseline←MLCA-n",
+  "improvement": "baseline 学生 + E2 教师伪标签（conf≥0.7）",
+  "dataset": "merged9",
+  "weight_file": "merged9.pt",
+  "exists": true,
+  "recommendation": "轻量蒸馏",
+  "metrics": {
+    "test_map50": 0.8987787274274682,
+    "test_map50_95": 0.7905289961180135,
+    "precision": 0.8864811787315185,
+    "recall": 0.8293343488904519,
+    "fps": 99.7,
+    "params_m": 3.013,
+    "size_mb": 5.974
+  },
+  "inference": {
+    "imgsz": 640,
+    "conf_default": 0.25,
+    "framework": "ultralytics YOLOv8"
+  }
+}

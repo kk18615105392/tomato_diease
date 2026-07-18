@@ -1,0 +1,242 @@
+{
+  "source": "C:\\Users\\cuizekun\\Desktop\\small_detect_5_19\\MLCA-master",
+  "export_ref": "C:\\Users\\cuizekun\\czk_biye\\model\\tomato_ablation",
+  "models": [
+    {
+      "key": "ablation-E1-v2",
+      "exp_id": "E1",
+      "dataset": "v2",
+      "label": "E1·YOLOv8n基准·整叶v2",
+      "improvement": "YOLOv8n基准",
+      "recommend": "v2对照",
+      "test_map50": 0.9711081566793718
+    },
+    {
+      "key": "ablation-E1-merged9",
+      "exp_id": "E1",
+      "dataset": "merged9",
+      "label": "E1·YOLOv8n基准·小病斑m9",
+      "improvement": "YOLOv8n基准",
+      "recommend": "merged9首选",
+      "test_map50": 0.9089369983167186
+    },
+    {
+      "key": "ablation-E2-v2",
+      "exp_id": "E2",
+      "dataset": "v2",
+      "label": "E2·MLCA四层+SPPF·整叶v2",
+      "improvement": "MLCA四层+SPPF",
+      "recommend": "仅作教师",
+      "test_map50": 0.9707982769231442
+    },
+    {
+      "key": "ablation-E2-merged9",
+      "exp_id": "E2",
+      "dataset": "merged9",
+      "label": "E2·MLCA四层+SPPF·小病斑m9",
+      "improvement": "MLCA四层+SPPF",
+      "recommend": "仅作教师",
+      "test_map50": 0.8972798996330709
+    },
+    {
+      "key": "ablation-E3-v2",
+      "exp_id": "E3",
+      "dataset": "v2",
+      "label": "E3·YOLOv8s+MLCA教师·整叶v2",
+      "improvement": "YOLOv8s+MLCA教师",
+      "recommend": "蒸馏教师",
+      "test_map50": 0.9750088241683628
+    },
+    {
+      "key": "ablation-E3-merged9",
+      "exp_id": "E3",
+      "dataset": "merged9",
+      "label": "E3·YOLOv8s+MLCA教师·小病斑m9",
+      "improvement": "YOLOv8s+MLCA教师",
+      "recommend": "蒸馏教师",
+      "test_map50": 0.8954233222666494
+    },
+    {
+      "key": "ablation-E4-v2",
+      "exp_id": "E4",
+      "dataset": "v2",
+      "label": "E4·baseline←E2蒸馏·整叶v2",
+      "improvement": "baseline←E2蒸馏",
+      "recommend": "轻量蒸馏",
+      "test_map50": 0.9715255827965453
+    },
+    {
+      "key": "ablation-E4-merged9",
+      "exp_id": "E4",
+      "dataset": "merged9",
+      "label": "E4·baseline←E2蒸馏·小病斑m9",
+      "improvement": "baseline←E2蒸馏",
+      "recommend": "轻量蒸馏",
+      "test_map50": 0.8987787274274682
+    },
+    {
+      "key": "ablation-E5-v2",
+      "exp_id": "E5",
+      "dataset": "v2",
+      "label": "E5·MLCA←E2蒸馏·整叶v2",
+      "improvement": "MLCA←E2蒸馏",
+      "recommend": "—",
+      "test_map50": 0.9711343165660253
+    },
+    {
+      "key": "ablation-E5-merged9",
+      "exp_id": "E5",
+      "dataset": "merged9",
+      "label": "E5·MLCA←E2蒸馏·小病斑m9",
+      "improvement": "MLCA←E2蒸馏",
+      "recommend": "merged9 MLCA",
+      "test_map50": 0.9050073131714209
+    },
+    {
+      "key": "ablation-E6-v2",
+      "exp_id": "E6",
+      "dataset": "v2",
+      "label": "E6·baseline←E3蒸馏·整叶v2",
+      "improvement": "baseline←E3蒸馏",
+      "recommend": "v2最佳蒸馏",
+      "test_map50": 0.9754086928088384
+    },
+    {
+      "key": "ablation-E6-merged9",
+      "exp_id": "E6",
+      "dataset": "merged9",
+      "label": "E6·baseline←E3蒸馏·小病斑m9",
+      "improvement": "baseline←E3蒸馏",
+      "recommend": "merged9蒸馏",
+      "test_map50": 0.9050956426485306
+    },
+    {
+      "key": "ablation-E7a-v2",
+      "exp_id": "E7a",
+      "dataset": "v2",
+      "label": "E7a·CBAM串行k=7·整叶v2",
+      "improvement": "CBAM串行k=7",
+      "recommend": "不推荐",
+      "test_map50": 0.9664493038383425
+    },
+    {
+      "key": "ablation-E7a-merged9",
+      "exp_id": "E7a",
+      "dataset": "merged9",
+      "label": "E7a·CBAM串行k=7·小病斑m9",
+      "improvement": "CBAM串行k=7",
+      "recommend": "不推荐",
+      "test_map50": 0.8913070347101786
+    },
+    {
+      "key": "ablation-E7b-v2",
+      "exp_id": "E7b",
+      "dataset": "v2",
+      "label": "E7b·CBAM-Lite×2·整叶v2",
+      "improvement": "CBAM-Lite×2",
+      "recommend": "CBAM最优",
+      "test_map50": 0.9719174551839951
+    },
+    {
+      "key": "ablation-E7b-merged9",
+      "exp_id": "E7b",
+      "dataset": "merged9",
+      "label": "E7b·CBAM-Lite×2·小病斑m9",
+      "improvement": "CBAM-Lite×2",
+      "recommend": "—",
+      "test_map50": 0.8903885164625684
+    },
+    {
+      "key": "ablation-E7c-v2",
+      "exp_id": "E7c",
+      "dataset": "v2",
+      "label": "E7c·SA-first+ECA·整叶v2",
+      "improvement": "SA-first+ECA",
+      "recommend": "不推荐",
+      "test_map50": 0.967135906055766
+    },
+    {
+      "key": "ablation-E7d-v2",
+      "exp_id": "E7d",
+      "dataset": "v2",
+      "label": "E7d·CBAM-T k=3·整叶v2",
+      "improvement": "CBAM-T k=3",
+      "recommend": "速度精度平衡",
+      "test_map50": 0.9707521624683612
+    },
+    {
+      "key": "ablation-E7d-merged9",
+      "exp_id": "E7d",
+      "dataset": "merged9",
+      "label": "E7d·CBAM-T k=3·小病斑m9",
+      "improvement": "CBAM-T k=3",
+      "recommend": "CBAM较好",
+      "test_map50": 0.8979242620623514
+    },
+    {
+      "key": "ablation-E8a-v2",
+      "exp_id": "E8a",
+      "dataset": "v2",
+      "label": "E8a·P2四尺度头·整叶v2",
+      "improvement": "P2四尺度头",
+      "recommend": "v2收益有限",
+      "test_map50": 0.9717719045662851
+    },
+    {
+      "key": "ablation-E8b-v2",
+      "exp_id": "E8b",
+      "dataset": "v2",
+      "label": "E8b·Copy-Paste增强·整叶v2",
+      "improvement": "Copy-Paste增强",
+      "recommend": "v2首选",
+      "test_map50": 0.975654270002809
+    },
+    {
+      "key": "ablation-E8c-v2",
+      "exp_id": "E8c",
+      "dataset": "v2",
+      "label": "E8c·P2+增强·整叶v2",
+      "improvement": "P2+增强",
+      "recommend": "高P少误检",
+      "test_map50": 0.9755141812397461
+    },
+    {
+      "key": "ablation-E8c-merged9",
+      "exp_id": "E8c",
+      "dataset": "merged9",
+      "label": "E8c·P2+增强·小病斑m9",
+      "improvement": "P2+增强",
+      "recommend": "—",
+      "test_map50": 0.8960582222954828
+    },
+    {
+      "key": "ablation-E9-v2",
+      "exp_id": "E9",
+      "dataset": "v2",
+      "label": "E9·PFA并行注意力·整叶v2",
+      "improvement": "PFA并行注意力",
+      "recommend": "优于CBAM",
+      "test_map50": 0.9740131667619825
+    },
+    {
+      "key": "ablation-E10-v2",
+      "exp_id": "E10",
+      "dataset": "v2",
+      "label": "E10·CPR蒸馏·整叶v2",
+      "improvement": "CPR蒸馏",
+      "recommend": "≈E6",
+      "test_map50": 0.9739301729889667
+    },
+    {
+      "key": "ablation-E11-v2",
+      "exp_id": "E11",
+      "dataset": "v2",
+      "label": "E11·CAKD双教师·整叶v2",
+      "improvement": "CAKD双教师",
+      "recommend": "无效",
+      "test_map50": 0.9719760409239058
+    }
+  ],
+  "default_v2": "ablation-E8b-v2",
+  "default_merged9": "ablation-E1-merged9"
+}
