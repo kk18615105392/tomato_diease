@@ -49,6 +49,22 @@ export function useAuth() {
     return res.user;
   }
 
+  /** 无后端时的访客预览（GitHub Pages 静态站可用） */
+  function enterGuest() {
+    const guest: AuthUser = {
+      id: 0,
+      username: "guest",
+      display_name: "访客预览",
+      created_at: new Date().toISOString(),
+    };
+    persist("guest:local-preview", guest);
+    return guest;
+  }
+
+  function isGuest() {
+    return Boolean(token.value?.startsWith("guest:"));
+  }
+
   function logout() {
     clearAuth();
   }
@@ -57,6 +73,7 @@ export function useAuth() {
     if (bootstrapped.value) return;
     bootstrapped.value = true;
     if (!token.value) return;
+    if (token.value.startsWith("guest:")) return;
     try {
       const me = await fetchMe();
       user.value = me.user;
@@ -72,6 +89,8 @@ export function useAuth() {
     isLoggedIn,
     login,
     register,
+    enterGuest,
+    isGuest,
     logout,
     bootstrap,
   };

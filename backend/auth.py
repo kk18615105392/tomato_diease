@@ -162,8 +162,16 @@ def login_required(fn: Callable):
     return wrapper
 
 
+def ensure_demo_user() -> None:
+    """保证演示账号存在：demo_user / demo123"""
+    if get_user_by_username("demo_user") is not None:
+        return
+    register_user("demo_user", "demo123", "演示用户")
+
+
 def register_auth_routes(app) -> None:
     init_db()
+    ensure_demo_user()
 
     @app.post("/api/auth/register")
     def auth_register():

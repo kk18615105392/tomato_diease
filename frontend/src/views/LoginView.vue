@@ -1,22 +1,52 @@
 <script setup lang="ts">
-import { reactive, ref } from "vue";
+import { onMounted, reactive, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { ElMessage } from "element-plus";
+import axios from "axios";
 import { useAuth } from "../composables/useAuth";
 
 const router = useRouter();
 const route = useRoute();
-const { login, register } = useAuth();
+const { login, register, enterGuest } = useAuth();
 
 const mode = ref<"login" | "register">("login");
 const loading = ref(false);
+const apiOnline = ref<boolean | null>(null);
 
 const form = reactive({
-  username: "",
-  password: "",
+  username: "demo_user",
+  password: "demo123",
   confirm: "",
   display_name: "",
 });
+
+onMounted(async () => {
+  try {
+    await axios.get("/api/health", { timeout: 2500 });
+    apiOnline.value = true;
+  } catch {
+    // Pages 或本机未开后端时走访客预览
+    apiOnline.value = false;
+  }
+});
+
+function resolveError(err: unknown, fallback: string) {
+  const ax = err as {
+    response?: { data?: { error?: string }; status?: number };
+    code?: string;
+    message?: string;
+  };
+  if (ax.response?.data?.error) return ax.response.data.error;
+  if (!ax.response || ax.code === "ERR_NETWORK" || ax.message?.includes("Network")) {
+    return "连不上后端 API。GitHub Pages 仅有前端，请点「访客预览」，或本机启动 backend 后再登录。";
+  }
+  return fallback;
+}
+
+async function goHome() {
+  const redirect = typeof route.query.redirect === "string" ? route.query.redirect : "/home";
+  await router.replace(redirect || "/home");
+}
 
 async function submit() {
   if (!form.username.trim() || !form.password) {
@@ -43,16 +73,18 @@ async function submit() {
       await register(form.username.trim(), form.password, form.display_name.trim() || undefined);
       ElMessage.success("注册成功，已自动登录");
     }
-    const redirect = typeof route.query.redirect === "string" ? route.query.redirect : "/home";
-    await router.replace(redirect || "/home");
+    await goHome();
   } catch (err: unknown) {
-    const msg =
-      (err as { response?: { data?: { error?: string } } })?.response?.data?.error ||
-      (mode.value === "login" ? "登录失败" : "注册失败");
-    ElMessage.error(msg);
+    ElMessage.error(resolveError(err, mode.value === "login" ? "登录失败" : "注册失败"));
   } finally {
     loading.value = false;
   }
+}
+
+async function guestEnter() {
+  enterGuest();
+  ElMessage.success("已进入访客预览（诊断等需本机后端）");
+  await goHome();
 }
 </script>
 
@@ -63,6 +95,16 @@ async function submit() {
         <h1>Tomato AI</h1>
         <p>番茄病虫害智能诊断与专家辅助决策系统</p>
       </div>
+
+      <el-alert
+        v-if="apiOnline === false"
+        type="warning"
+        :closable="false"
+        show-icon
+        class="api-alert"
+        title="当前未检测到后端服务"
+        description="在线 Pages 无法账号登录。可点下方「访客预览」浏览界面；完整登录/诊断请本机启动 Flask 后端。"
+      />
 
       <el-tabs v-model="mode" class="auth-tabs" stretch>
         <el-tab-pane label="登录" name="login" />
@@ -107,9 +149,15 @@ async function submit() {
         <el-button type="primary" class="submit-btn" :loading="loading" @click="submit">
           {{ mode === "login" ? "登录" : "注册并进入系统" }}
         </el-button>
+
+        <el-button class="guest-btn" :disabled="loading" @click="guestEnter">
+          访客预览（无需后端）
+        </el-button>
       </el-form>
 
-      <p class="auth-hint">注册后可使用智能诊断、模型看板等完整功能</p>
+      <p class="auth-hint">
+        本机演示账号：<code>demo_user</code> / <code>demo123</code>（需先启动后端）
+      </p>
     </div>
   </div>
 </template>
@@ -149,6 +197,10 @@ async function submit() {
   line-height: 1.5;
 }
 
+.api-alert {
+  margin-bottom: 14px;
+}
+
 .auth-tabs {
   margin-bottom: 8px;
 }
@@ -160,10 +212,25 @@ async function submit() {
   font-size: 15px;
 }
 
+.guest-btn {
+  width: 100%;
+  margin-top: 10px;
+  margin-left: 0 !important;
+  height: 40px;
+}
+
 .auth-hint {
   margin: 16px 0 0;
   text-align: center;
   font-size: 12px;
   color: #9ca3af;
+  line-height: 1.6;
+}
+
+.auth-hint code {
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: #f3f4f6;
+  color: #166534;
 }
 </style>
