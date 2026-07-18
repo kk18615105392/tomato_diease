@@ -1,5 +1,5 @@
-# Auto-generated for czk_biye · E6 · merged9
-weights: C:\Users\cuizekun\czk_biye\model\ablation-E6-merged9\weights\best.pt
+﻿# Auto-generated for tomato_diease / E6 / merged9
+weights: model/ablation-E6-merged9/weights/best.pt
 cfg: ultralytics-yolov8
 imgsz: 640
 epochs: 80

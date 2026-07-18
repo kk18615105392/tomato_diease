@@ -48,7 +48,7 @@ MODEL_METRICS = {
     "segmentation": {
         "model_name": "（已弃用）DeepLabV3+ 分割",
         "weights": "—",
-        "dataset": "论文第六章已取消分割章节；保留字段仅兼容旧 API",
+        "dataset": "分割模式已停用；保留字段仅兼容旧 API",
         "epochs": 0,
         "precision": 0.0,
         "recall": 0.0,
@@ -248,6 +248,6 @@ def get_all_metrics():
         }
         metrics["segmentation"] = {
             **MODEL_METRICS["segmentation"],
-            "note": "论文第六章已取消分割；前端不再提供该模式",
+            "note": "分割模式已停用；前端不再提供该入口",
         }
     return metrics

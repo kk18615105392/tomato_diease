@@ -1,5 +1,5 @@
-# Auto-generated for czk_biye · E4 · v2
-weights: C:\Users\cuizekun\czk_biye\model\ablation-E4-v2\weights\best.pt
+﻿# Auto-generated for tomato_diease / E4 / v2
+weights: model/ablation-E4-v2/weights/best.pt
 cfg: ultralytics-yolov8
 imgsz: 640
 epochs: 80

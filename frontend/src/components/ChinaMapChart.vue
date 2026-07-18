@@ -236,7 +236,7 @@ onBeforeUnmount(() => {
           </span>
           <span class="rank-val">{{ item.value }}</span>
         </div>
-        <p class="map-note">各省集中暴发指数（示意分布，可用于答辩演示）</p>
+        <p class="map-note">各省集中暴发指数（示意分布）</p>
       </div>
     </div>
   </div>

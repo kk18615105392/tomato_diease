@@ -1,6 +1,6 @@
 {
-  "source": "C:\\Users\\cuizekun\\Desktop\\small_detect_5_19\\MLCA-master",
-  "export_ref": "C:\\Users\\cuizekun\\czk_biye\\model\\tomato_ablation",
+  "source": "vendor/MLCA",
+  "export_ref": "model/tomato_ablation",
   "models": [
     {
       "key": "ablation-E1-v2",

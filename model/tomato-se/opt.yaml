@@ -1,4 +1,5 @@
-weights: .
+﻿# Auto-generated for tomato_diease / exp / unknown
+weights: model/tomato-se/weights/best.pt
 cfg: models/mobilenetv3-SE.yaml
 data: data/tomato_v1.yaml
 hyp: data\hyps\hyp.scratch-low.yaml

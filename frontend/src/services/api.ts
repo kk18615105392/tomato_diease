@@ -95,7 +95,7 @@ export type DetectionResult = {
   error?: string;
 };
 
-/** @deprecated 论文已取消分割章节；保留类型仅兼容历史记录 */
+/** @deprecated 分割模式已移除；保留类型仅兼容历史记录 */
 export type SegmentationResult = {
   mode: "segmentation";
   image_id: string;

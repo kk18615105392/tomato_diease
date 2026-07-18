@@ -17,7 +17,7 @@ MODEL_ROOT = PROJECT_ROOT / "model"
 
 DEFAULT_DETECTION_MODEL = "ablation-E8b-v2"
 
-# 11 组消融实验 · 改进要点精简名（与论文表格一致）
+# 11 组消融实验 · 改进要点精简名
 EXPERIMENT_IMPROVEMENTS: dict[str, str] = {
     "E1": "YOLOv8n基准",
     "E2": "MLCA四层+SPPF",
@@ -179,7 +179,8 @@ def scan_detection_models() -> list[dict]:
                 "improvement": improvement or EXPERIMENT_IMPROVEMENTS.get(exp_id, ""),
                 "recommend": recommend,
                 "group": group,
-                "weights": str(weights.resolve()),
+                # 相对路径对外展示，避免暴露本机用户目录
+                "weights": str(weights.relative_to(PROJECT_ROOT)).replace("\\", "/"),
                 "cfg": cfg,
                 "engine": engine,
                 "dataset": dataset,
@@ -219,3 +220,11 @@ def get_detection_model(key: str | None = None) -> dict | None:
     if not key:
         return next((m for m in models if m["is_default"]), models[0])
     return next((m for m in models if m["key"] == key), None)
+
+
+def resolve_weights_path(meta: dict) -> str:
+    """将 registry 中的相对 weights 转为绝对路径供推理加载。"""
+    p = Path(meta["weights"])
+    if not p.is_absolute():
+        p = PROJECT_ROOT / p
+    return str(p.resolve())

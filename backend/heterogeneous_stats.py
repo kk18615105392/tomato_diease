@@ -1,4 +1,4 @@
-"""第六章：跨作物病害识别的域适应研究 — 实验看板数据。
+"""跨作物病害识别的域适应研究 — 实验看板数据。
 
 源域：PlantVillage-Tomato；目标域：Tropical-Fruit（芒果等）。
 实验主线：多任务混合 → MMD 对齐 → 对抗域适应 → 消融泛化。
@@ -73,7 +73,7 @@ ROBUSTNESS_RADAR = {
 }
 
 # ── 实验一：混合比例（表 1）──────────────────────────────
-# 混合比例 = 目标域样本数 / 源域样本数；数值为实验记录/论文填表用示意终值
+# 混合比例 = 目标域样本数 / 源域样本数；数值为实验记录示意终值
 EXP1_MIX_RATIO = [
     {"group": "Baseline-A", "mix_ratio": "0%", "uncertainty": False, "tomato_acc": 92.4, "tomato_f1": 91.8, "fruit_acc": None, "fruit_f1": None, "note": "单任务源域"},
     {"group": "Exp 1-1", "mix_ratio": "10%", "uncertainty": True, "tomato_acc": 92.8, "tomato_f1": 92.1, "fruit_acc": 71.2, "fruit_f1": 68.5, "note": "低比例扰动"},
@@ -110,7 +110,7 @@ EXP4_ABLATION = [
 ]
 
 CHAPTER6_META = {
-    "title": "第六章 · 跨作物病害识别的域适应研究",
+    "title": "跨作物病害识别的域适应研究",
     "hypothesis": "不同作物病害的病理表征存在可迁移共享隐向量，可通过域适应对齐。",
     "pipeline": [
         "先验探索：多任务联合 + 不确定性动态加权",
@@ -125,7 +125,6 @@ CHAPTER6_META = {
 
 def get_heterogeneous_stats() -> dict:
     return {
-        "chapter": "6",
         "meta": CHAPTER6_META,
         "dataset": DATASET_STATS,
         "epoch_comparison": EPOCH_COMPARISON,
@@ -140,6 +139,6 @@ def get_heterogeneous_stats() -> dict:
             f"（相对 Source-Only 跨域 {EXP4_ABLATION[0]['cross_test']}% 显著提升）。"
             f"PlantDoc 田间精度 {BASELINE_FINAL}% → {ENHANCED_FINAL}%（+{EPOCH_COMPARISON['improvement_abs']}%）。"
         ),
-        "data_source": "chapter6_experiment_tables",
-        "note": "表内数值为论文实验终值模板；若你本地重跑实验，可替换 backend/heterogeneous_stats.py 中对应列表。",
+        "data_source": "domain_adaptation_experiment_tables",
+        "note": "表内数值为实验终值模板；若本地重跑实验，可替换 backend/heterogeneous_stats.py 中对应列表。",
     }

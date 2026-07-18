@@ -9,7 +9,7 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from model_registry import get_detection_model
+from model_registry import get_detection_model, resolve_weights_path
 
 BASE_DIR = Path(__file__).resolve().parent
 YOLO_ROOT = BASE_DIR / "vendor" / "MLCA"
@@ -56,7 +56,7 @@ def get_model(model_key: str | None = None):
 
     key = meta["key"]
     if key not in _loaded_models:
-        model, device, stride, names = _load_model(meta["weights"])
+        model, device, stride, names = _load_model(resolve_weights_path(meta))
         _loaded_models[key] = {
             "model": model,
             "device": device,

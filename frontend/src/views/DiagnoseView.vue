@@ -413,7 +413,7 @@ function buildCurrentRecord(): HistoryRecord | null {
         <!-- 模式三：分割 -->
         <div v-else-if="result?.mode === 'segmentation'" class="result-body">
           <el-tag type="danger" size="large" effect="dark">{{ result.disease_name }}</el-tag>
-          <p class="result-sub">（历史记录）严重度定量 · 分割已从论文第六章移除</p>
+          <p class="result-sub">（历史记录）严重度定量 · 分割模式已停用</p>
           <div class="dsi-block">
             <p class="dsi-value">{{ result.dsi }}<span class="dsi-unit">%</span></p>
             <p class="dsi-label">病情指数 (DSI)</p>

@@ -1,4 +1,4 @@
-"""推断函数：三维诊断均基于真实 YOLO 检测结果（分类/分割为检测代理，无独立 .pth 时）。"""
+"""推断函数：定性/检测均基于真实 YOLO 检测结果（分类为检测代理）。"""
 
 from __future__ import annotations
 
@@ -6,7 +6,12 @@ import base64
 from collections import defaultdict
 
 from detection_engine import run_detection
-from model_registry import DEFAULT_DETECTION_MODEL, get_detection_model, scan_detection_models
+from model_registry import (
+    DEFAULT_DETECTION_MODEL,
+    get_detection_model,
+    resolve_weights_path,
+    scan_detection_models,
+)
 
 
 def _run_detection_router(image_path: str, model_key: str | None, conf: float = 0.25) -> dict:
@@ -18,7 +23,7 @@ def _run_detection_router(image_path: str, model_key: str | None, conf: float = 
 
         out = run_detection_v8(
             image_path,
-            meta["weights"],
+            resolve_weights_path(meta),
             conf_thres=conf,
             imgsz=meta.get("imgsz", 640),
             dataset=meta.get("dataset"),

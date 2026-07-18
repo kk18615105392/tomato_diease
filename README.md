@@ -2,7 +2,7 @@
 
 [![Deploy GitHub Pages](https://github.com/kk18615105392/tomato_diease/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/kk18615105392/tomato_diease/actions/workflows/deploy-pages.yml)
 
-毕业设计系统：基于 YOLO 的番茄叶片病害**快速定性 / 精准定位**诊断，集成专家处方、病害百科、模型看板，以及论文**第六章跨作物域适应**实验看板；配套微信小程序田间版。
+基于 YOLO 的番茄叶片病害**快速定性 / 精准定位**诊断，集成专家处方、病害百科、模型看板，以及跨作物域适应实验看板；配套微信小程序田间版。
 
 > 在线前端（GitHub Pages）：  
 > **https://kk18615105392.github.io/tomato_diease/**  
@@ -19,7 +19,7 @@
 | 专家问答 | 基于诊断结果的植保处方（可接 LLM） |
 | 病害百科 / 对照库 | 典型病斑参考与相似度对照 |
 | 模型看板 | 消融实验 test mAP@0.5 排名（读取 `model/*/results.csv`） |
-| 域适应看板 (Ch6) | 番茄→热带水果：多任务 / MMD / GRL / 消融表 |
+| 域适应看板 | 番茄→热带水果：多任务 / MMD / GRL / 消融表 |
 | 微信小程序 | 同账号登录、拍叶诊断、报告与百科 |
 
 ---
@@ -36,7 +36,7 @@
 ## 目录结构
 
 ```text
-czk_biye/
+tomato_diease/
 ├── frontend/          # Web 前端
 ├── backend/           # Flask API
 ├── miniprogram/       # 微信小程序
@@ -51,7 +51,7 @@ czk_biye/
 
 ### 环境要求
 
-- Python 3.10+（推荐 conda 环境，如 `pytorch_gpu`）
+- Python 3.10+（推荐 conda 环境）
 - Node.js 18+
 - （可选）NVIDIA GPU + CUDA，用于加速 YOLO
 
@@ -103,7 +103,7 @@ npm run dev
 |--------|------|
 | `demo_user` | `demo123` |
 
-也可在登录页自行注册。
+也可在登录页自行注册。在线 Pages 无后端时，可使用「访客预览」浏览界面。
 
 ### 微信小程序
 
@@ -115,14 +115,9 @@ npm run dev
 
 ## GitHub 自动部署（前端）
 
-推送到 `main` 后，GitHub Actions 会：
+推送到 `main` 后，GitHub Actions 会构建并部署到 **GitHub Pages**。
 
-1. 安装依赖并 `npm run build`
-2. 将产物部署到 **GitHub Pages**
-
-首次使用需在仓库设置中开启 Pages：
-
-**Settings → Pages → Build and deployment → Source：GitHub Actions**
+**Settings → Pages → Source：GitHub Actions**
 
 部署完成后访问：
 
@@ -132,9 +127,9 @@ https://kk18615105392.github.io/tomato_diease/
 
 ---
 
-## 论文第六章（域适应）
+## 域适应看板
 
-看板路径：Web 侧栏 **域适应看板(Ch6)**  
+看板路径：Web 侧栏 **域适应看板**  
 数据源：`backend/heterogeneous_stats.py`（实验终值模板，本地重跑后可替换数字）
 
 实验主线：多任务混合比例 → MMD 对齐 → GRL 对抗域适应 → 消融与跨域泛化。
@@ -150,11 +145,11 @@ https://kk18615105392.github.io/tomato_diease/
 | POST | `/api/diagnose` | 诊断（`classification` / `detection`） |
 | GET  | `/api/detection_models` | 可用检测权重列表 |
 | GET  | `/api/model_metrics` | 模型看板指标 |
-| GET  | `/api/stats/heterogeneous` | 第六章域适应看板数据 |
+| GET  | `/api/stats/heterogeneous` | 域适应看板数据 |
 | POST | `/api/chat_expert` | 专家流式问答 |
 
 ---
 
-## 许可证与说明
+## 说明
 
-本仓库用于毕业设计展示与复现。请勿将含隐私的田间原图、账号密钥提交到公开仓库。
+请勿将含隐私的田间原图、账号密钥提交到公开仓库。

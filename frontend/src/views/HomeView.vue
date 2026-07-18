@@ -66,7 +66,7 @@ function formatTime(iso: string) {
           <div class="dashboard-banner">
             <div>
               <h3>番茄病虫害智能诊断与专家辅助决策系统</h3>
-              <p>支持快速定性 · 精准定位二维诊断，第六章域适应看板展示跨作物泛化，并结合专家处方</p>
+              <p>支持快速定性 · 精准定位诊断，域适应看板展示跨作物泛化，并结合专家处方</p>
             </div>
             <el-button type="success" size="large" @click="go('/diagnose')">
               立即检测

@@ -40,7 +40,7 @@ const menuItems: MenuItem[] = [
   { index: "/wiki", label: "病害百科", icon: Reading },
   { index: "/zones", label: "温室分区", icon: Grid },
   { index: "/metrics", label: "模型看板", icon: DataBoard },
-  { index: "/enhancement-dashboard", label: "域适应看板(Ch6)", icon: TrendCharts },
+  { index: "/enhancement-dashboard", label: "域适应看板", icon: TrendCharts },
   { index: "/history", label: "历史报告", icon: Files },
   { index: "/expert", label: "专家问答", icon: ChatDotRound },
   { index: "/miniprogram", label: "田间小程序", icon: Iphone },

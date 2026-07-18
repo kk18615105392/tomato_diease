@@ -41,7 +41,7 @@ model/
 在 MLCA-master 项目执行：
 
 ```powershell
-python tools/deploy_to_czk_biye.py --target C:\Users\cuizekun\czk_biye
+python tools/deploy_to_tomato_diease.py --target ./tomato_diease
 ```
 
 ## 实验对照
